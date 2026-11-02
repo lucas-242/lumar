@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://SEU-DOMINIO/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <image:image><image:loc>https://SEU-DOMINIO/assets/img/hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://SEU-DOMINIO/assets/img/full/f1.webp</image:loc></image:image>
+    <image:image><image:loc>https://SEU-DOMINIO/assets/img/full/gel.webp</image:loc></image:image>
+    <image:image><image:loc>https://SEU-DOMINIO/assets/img/full/sobrancelhas.webp</image:loc></image:image>
+    <image:image><image:loc>https://SEU-DOMINIO/assets/img/full/g1.webp</image:loc></image:image>
+    <image:image><image:loc>https://SEU-DOMINIO/assets/img/full/g2.webp</image:loc></image:image>
+    <image:image><image:loc>https://SEU-DOMINIO/assets/img/full/g3.webp</image:loc></image:image>
+    <image:image><image:loc>https://SEU-DOMINIO/assets/img/full/g4.webp</image:loc></image:image>
+    <image:image><image:loc>https://SEU-DOMINIO/assets/img/full/g5.webp</image:loc></image:image>
+    <image:image><image:loc>https://SEU-DOMINIO/assets/img/full/g6.webp</image:loc></image:image>
+  </url>
+</urlset>
