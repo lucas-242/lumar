@@ -32,8 +32,7 @@ Exemplo de link para anúncio: `?utm_source=instagram&utm_medium=bio&utm_campaig
 Testes: `?debug=1` mostra os eventos no console; `#privacidad` força o aviso; `?lang=pt` abre em português.
 
 ## Imagens
-- `assets/img/hero.webp` (1920×1080) e `assets/img/hero-m.webp` (1000×1500, celular): foto de abertura, com efeito parallax (desligado para quem prefere menos movimento).
-- Cada foto de serviço e da galeria existe em duas versões com o mesmo nome: `assets/img/NOME.webp` (exibida) e `assets/img/full/NOME.webp` (aberta no visualizador). Nomes: `f1`, `gel`, `sobrancelhas`, `g1`–`g6`, todas em 4:5.
+- `assets/img/hero-m.webp` (1000×1500): foto de abertura em todas as telas, dentro do arco do hero, com parallax leve (desligado para quem prefere menos movimento).- Cada foto de serviço e da galeria existe em duas versões com o mesmo nome: `assets/img/NOME.webp` (exibida) e `assets/img/full/NOME.webp` (aberta no visualizador). Nomes: `f1`, `gel`, `sobrancelhas`, `g1`–`g6`, todas em 4:5.
 - `assets/img/og.jpg` (1200×630): imagem que aparece ao compartilhar o link no WhatsApp, Instagram e Facebook.
 - Visualizador: clique ou toque na foto para ampliar no ponto escolhido, arraste para mover, roda do mouse ou pinça para ajustar, deslize ou setas para trocar de foto, Esc ou toque fora para fechar.
 - O único espaço tracejado que sobra é o retrato da Marcela (`data-placeholder="retrato"`).

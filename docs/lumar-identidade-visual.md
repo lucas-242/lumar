@@ -15,7 +15,8 @@ Guia completo (com prévias visuais): https://claude.ai/artifact/DcyhxMPdeH5RAi5
   - "Beleza com calma, no conforto da sua casa."
   - "Atendimento personalizado em Asunción."
   - "Cuidar de si também é um ritual."
-- Rótulos e botões em CAIXA-ALTA com espaçamento largo (estilos `label` e `button`), como o descritor do logo. Títulos e frases em caixa normal.
+- Só os rótulos (eyebrows) vão em CAIXA-ALTA com espaçamento largo (estilo `label`), como o descritor do logo. Botões, links, navegação, títulos e frases em caixa normal: a caixa-alta repetida endurece a página e briga com o itálico da Fraunces.
+- Termos técnicos vêm depois do benefício. Primeiro o que a pessoa ganha ("unhas alongadas que parecem naturais"), depois a técnica como selo de autoridade ("Técnica molde F1"), sempre com uma frase que a explique para quem não conhece.
 - Nomes de pessoas e cargos nas peças impressas: nome em caixa-alta na serifa, cargo em Hanken Grotesk.
 
 ---
@@ -28,6 +29,8 @@ A marca é verde, creme e dourado, com um toque de violeta. Há dois temas: **Cr
 
 | Nome | Hex | Uso |
 |---|---|---|
+| branco | `#FFFFFF` | Fundo de página da landing. Dá o respiro que o nicho pede e faz as fotos saltarem. |
+| blush | `#F4E7E2` | Nude rosado das unhas. Faixa de oferta, selos, números dos passos e placeholders na landing. Texto sobre ele: verde-noite, cinza-musgo (5,6:1) ou ouro-texto (4,6:1). |
 | verde-floresta | `#2F482D` | Cor principal, medida do fundo verde do logo. Fundo do verso do cartão, de posts e de seções escuras; texto sobre creme (9,4:1). |
 | verde-profundo | `#263B25` | Um tom abaixo do principal. Só como superfície alternativa no tema Verde. |
 | verde-noite | `#262C24` | Quase-preto esverdeado. Texto principal sobre creme (13,4:1) e texto de botão sobre ouro-claro. |
@@ -70,6 +73,21 @@ A marca é verde, creme e dourado, com um toque de violeta. Há dois temas: **Cr
 - Salvia e folha são cores de apoio para ilustração; não servem para texto.
 - Nada de gradiente em fundos ou botões. O gradiente dourado existe só dentro do wordmark e não é reproduzido em código.
 
+### Landing page
+
+A landing usa sempre o tema claro e não troca para o tema Verde no modo escuro do celular: a página inteira verde ficava pesada demais para um serviço delicado.
+
+| Token | Valor | Uso |
+|---|---|---|
+| `surface` | branco | Fundo de página |
+| `surface-alt` | creme | Painéis arredondados alternados, chips e cartões |
+| `blush` | blush | Faixa de oferta, selos e destaques suaves |
+| `cta` / `cta-hover` | verde-floresta / `#3D5C3A` | Botão de WhatsApp |
+| `glass` | branco a 72% + desfoque de 16px | Barra do topo e barra fixa do celular |
+
+- Proporção 60-30-10: branco domina, creme e blush apoiam, e verde e dourado ficam como acento. Na landing, o verde aparece só no botão principal e no logo, nunca como fundo de seção.
+- Os painéis `surface-alt` e `blush` ficam soltos das bordas da tela (8–24px) com cantos `radius-xl`, como cartões apoiados na página.
+
 ---
 
 ## 3. Tipografia
@@ -89,7 +107,7 @@ A marca é verde, creme e dourado, com um toque de violeta. Há dois temas: **Cr
 | `body` | Hanken Grotesk | 16px / 26px | 400 | — | Texto corrido |
 | `body-sm` | Hanken Grotesk | 14px / 22px | 400 | — | Legendas e notas |
 | `label` | Hanken Grotesk | 12px / 16px | 500 | 0.22em | Eyebrows e rótulos, sempre em CAIXA-ALTA |
-| `button` | Hanken Grotesk | 13px / 16px | 600 | 0.14em | Botões, em CAIXA-ALTA |
+| `button` | Hanken Grotesk | 15px / 1.2 | 600 | 0.01em | Botões e links, em caixa normal |
 
 ### Regras de tipografia
 
@@ -112,13 +130,19 @@ A marca é verde, creme e dourado, com um toque de violeta. Há dois temas: **Cr
 | `space-6` | 64px | Entre seções (prefira espaço a mais) |
 | `space-7` | 96px | Respiro do hero e da capa |
 | `radius-none` | 0 | Cartão de visita impresso e posts |
-| `radius-sm` | 2px | Botões e campos: quase reto, como papel cortado |
-| `radius-md` | 12px | Cartões e imagens na landing |
-| `radius-full` | 9999px | Avatar circular, ecoando o anel de renda |
-| `shadow-paper` | Creme: `0 18px 36px -18px rgba(38,44,36,.35)` · Verde: `0 18px 36px -18px rgba(0,0,0,.55)` | Única sombra: papel apoiado (cartão, mockups) |
+| `radius-sm` | 12px | Campos e elementos pequenos |
+| `radius-md` | 20px | Cartões, perguntas do FAQ e fotos da galeria na landing |
+| `radius-lg` | 28px | Cartões grandes (passos) e base dos arcos |
+| `radius-xl` | 24–48px (fluido) | Painéis de seção e faixa de oferta |
+| `radius-full` | 9999px | Botões, chips, seletor de idioma e avatar, ecoando o anel de renda |
+| `arch` | `50% 50% radius-md radius-md / 40% 40% radius-md radius-md` | Arco em fotos 4:5 (hero, serviços, retrato): ecoa o formato amendoado da unha |
+| `shadow-paper` | Creme: `0 18px 36px -18px rgba(38,44,36,.35)` · Verde: `0 18px 36px -18px rgba(0,0,0,.55)` | Papel apoiado em peças impressas e mockups |
+| `shadow-warm` | `0 24px 48px -28px rgba(131,99,55,.38)` | Fotos e cartões na landing: sombra dourada e difusa |
+| `shadow-soft` | `0 12px 32px -20px rgba(38,44,36,.22)` | Botões e seletor ativo |
 
 - Composição centrada ou em colunas amplas, com margens generosas: entre seções `space-6` ou `space-7`, nunca menos de `space-5`.
-- Divisórias são filetes de 1px em `line` ou `accent`, poucos e com muito ar. Sem cartões com borda lateral colorida.
+- Na landing, separe blocos com espaço ou troca de fundo, não com filetes. Nenhuma linha reta com mais de ~40px: listas usam um ponto dourado de 7px, e passos e perguntas viram cartões arredondados. Peças impressas podem manter filetes de 1px, poucos e com muito ar.
+- Sem cartões com borda lateral colorida.
 - Foco: contorno sólido de 2px em `focus-ring` com offset de 2px.
 
 ---
@@ -154,6 +178,10 @@ Todos os arquivos têm o fundo da própria versão (creme `#FAF7F2` ou verde `#2
 
 - A ilustração da marca é gravura botânica: traço fino, folhas de erva-mate e mburucuyá. Novas ilustrações seguem esse traço, em verde-floresta, folha, salvia, ouro-antigo e um toque de violeta.
 - Fotografia em luz natural e quente, tons suaves, pele e mãos reais. Evite cenas de catálogo de spa (pedras empilhadas, bambu, orquídea) e filtros fortes.
+- Evite filtros "vintage" com pretos lavados e dominante verde: deixam as unhas sem vida. Preset único para todas as fotos: temperatura +3 a +6, matiz +6 a +10 para o magenta, pretos −15 a −25, contraste +10, vibração +15, saturação de verde/aqua −20 e luminância de laranja +5 (pele).
+- Prefira fundos brancos, linho ou blush. Fundos verde-escuros ou pretos competem com as unhas.
+- O verde das fotos antigas vinha de um filtro aplicado depois (sombras esverdeadas e pretos lavados); os originais da câmera não têm esse tom. As fotos do site são geradas a partir dos originais em `images/` (fora da pasta publicada), com o mesmo recorte do layout e só uma curva suave que clareia os tons médios, sem mexer em preto e branco puros. Nunca aplique filtros de app ("filme", "vintage", "matte") antes de publicar.
+- Formatos na landing: miniaturas em WebP de 1000 × 1250 (hero 1000 × 1500), versões ampliadas até 1400px de largura, qualidade 74–76.
 - Sem ícones decorativos nem emoji. Quando faltar um símbolo, use um filete dourado ou a flor.
 
 ---
@@ -162,14 +190,15 @@ Todos os arquivos têm o fundo da própria versão (creme `#FAF7F2` ou verde `#2
 
 ### Botão
 
-Retangular, quase reto, texto em caixa-alta espaçada. Um único botão principal por tela, que leva ao WhatsApp.
+Pílula, em caixa normal. Um único botão principal por tela, que leva ao WhatsApp.
 
-- Fundo `cta`, texto `on-cta`, estilo `button`, padding `space-3` × `space-4`, `radius-sm`.
-- Hover: fundo transparente, texto `cta` e borda de 1px em `cta`.
+- Fundo `cta`, texto `on-cta`, estilo `button`, padding 14px × 28px, `radius-full`, `shadow-soft`.
+- Hover: fundo `cta-hover` e subida de 1px. Sem borda.
 - Foco: contorno de 2px em `focus-ring`, offset 2px.
-- Secundário: só borda `accent` e texto `ink`. No máximo um ao lado do principal.
-- Tema Creme: verde-floresta com texto creme. Tema Verde: ouro-claro com texto verde-noite.
-- Nunca em violeta, com gradiente ou com sombra.
+- Secundário: fundo `surface-alt`, texto `ink`, sem borda nem sombra. No máximo um ao lado do principal.
+- Links de texto em `accent-text`, sem sublinhado, seguidos de "→", que desliza 4px no hover.
+- Tema Creme: verde-floresta com texto creme. Tema Verde (fora da landing): ouro-claro com texto verde-noite.
+- Nunca em violeta nem com gradiente.
 - Links de WhatsApp sempre com `target="_blank"` e `rel="noopener"`.
 
 ### Cartão de visita
@@ -183,7 +212,7 @@ Quadrado, cantos retos (`radius-none`).
   - Telefone e cidade: Hanken Grotesk 400, champanhe. Instagram: creme.
 - Acabamento sugerido: papel texturizado e hot stamping dourado no logo e no nome.
 - No máximo cinco linhas no verso.
-- Exemplo: Marcela Labrea · Fundadora · +595 982 129 737 · @lumar.py · Asunción • Paraguay. O cargo e o perfil de Instagram são provisórios: confirme antes de imprimir.
+- Exemplo: Marcela Labrea · Fundadora · +595 982 192 737 · @lumar.py · Asunción • Paraguay. O cargo e o perfil de Instagram são provisórios: confirme antes de imprimir.
 
 ### Posts de Instagram
 
@@ -206,13 +235,14 @@ Formato 4:5 (1080 × 1350px). Uma frase curta em Fraunces leve (até 10 palavras
 
 - Fundo `surface`, `label` acima do título, título `display-xl` (40px no celular) com uma palavra em itálico e `accent-text`, frase em `body-lg` e `ink-muted`.
 - Uma única chamada para ação: o botão de WhatsApp.
-- Sem fotos próprias, o emblema sobre painel verde-floresta (`radius-md`, `shadow-paper`) faz o papel de imagem. Com fotos, a foto substitui o painel.
-- Na landing atual, a abertura usa foto em tela cheia com véu verde-noite, título em creme, destaque e botão em ouro-claro.
+- Sem fotos próprias, o emblema sobre painel verde-floresta (`radius-md`, `shadow-warm`) faz o papel de imagem. Com fotos, a foto substitui o painel.
+- Na landing atual, a abertura é dividida: texto à esquerda sobre branco e foto em arco à direita, sem véu nem sobreposição. No celular, a foto vem em cima, com cantos superiores de 160px, e o texto embaixo.
+- A barra do topo é translúcida (`glass`), sem filete, e flutua sobre o conteúdo.
 
 ---
 
 ## 8. Contato usado nas peças
 
-- Marcela Labrea · WhatsApp +595 982 129 737
+- Marcela Labrea · WhatsApp +595 982 192 737
 - Instagram: @marcela.labrea.py (https://www.instagram.com/marcela.labrea.py/)
-- Na landing, o link do WhatsApp foi configurado como `https://wa.me/5950982129737`, a pedido.
+- Na landing, o link do WhatsApp é `https://wa.me/5950982192737`.

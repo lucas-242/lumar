@@ -18,25 +18,25 @@
   // El español vive en el HTML; aquí solo el portugués y el mensaje de WhatsApp.
   const dict = {
     es: {
-      'wa.msg': '¡Hola, Marcela! Vi el sitio de Lumar y quiero reservar con el 15% de descuento para nuevos clientes.'
+      'wa.msg': 'Hola, Marcela. Vi el sitio de Lumar y quiero reservar con el 15% de descuento para nuevos clientes.'
     },
     pt: {
       'nav.tecnica': 'Técnica', 'nav.manicure': 'Manicure', 'nav.sobrancelhas': 'Sobrancelhas', 'nav.agendar': 'Agendar',
       'cta.header': '15% no WhatsApp',
       'hero.eyebrow': 'Salão de unhas e sobrancelhas · Asunción',
       'hero.h1': 'Unhas e sobrancelhas com técnica brasileira e <em>naturalidade</em>.',
-      'hero.lead': 'Alongamento em gel com molde F1, esmaltação em gel e design de sobrancelhas que valorizam o que você já tem.',
+      'hero.lead': 'Unhas alongadas que parecem naturais, esmaltação em gel e sobrancelhas que valorizam o que você já tem.',
       'hero.cta': 'Quero 15% no WhatsApp', 'hero.ig': 'Ver trabalhos no Instagram',
       'hero.note': '15% de desconto para novos clientes.',
-      'strip.1': 'Molde F1', 'strip.2': 'Gel', 'strip.3': 'Sobrancelhas', 'strip.4': 'Técnica brasileira',
+      'strip.1': 'Alongamento natural', 'strip.2': 'Esmaltação em gel', 'strip.3': 'Sobrancelhas', 'strip.4': 'Técnica brasileira',
       'nat.eyebrow': 'Naturalidade',
       'nat.title': 'Natural não é fazer menos. É saber o que <em>deixar</em>.',
       'nat.text': 'A escola brasileira de manicure é referência em acabamento limpo, cuidado com a cutícula e unhas de aparência natural. A Lumar traz essa técnica para Asunción e aplica o mesmo critério nas sobrancelhas: realçar o que já é seu.',
       'nat.p1': 'Formato que acompanha a sua mão', 'nat.p2': 'Comprimento e cor discretos', 'nat.p3': 'Acabamento fino e limpo',
       'man.eyebrow': 'Manicure', 'man.title': 'Unhas que parecem suas, só que melhores.',
       'man.cta': 'Consultar valores no WhatsApp',
-      'f1.title': 'Alongamento em gel, molde F1',
-      'f1.text': 'O molde F1 permite modelar a extensão em gel com precisão, no comprimento e no formato que combinam com a sua mão. O resultado é leve, fino e sem aspecto de unha postiça.',
+      'f1.tag': 'Técnica molde F1', 'f1.title': 'Alongamento em gel',
+      'f1.text': 'Um molde dá forma ao gel sobre a sua unha, no comprimento e no formato que combinam com a sua mão. O resultado é mais fino e leve, sem aspecto de unha postiça.',
       'f1.p1': 'Comprimento e formato escolhidos com você', 'f1.p2': 'Acabamento fino e cutícula bem cuidada', 'f1.p3': 'Cores discretas, do nude ao rosado',
       'gel.title': 'Esmaltação em gel',
       'gel.text': 'Cor e brilho com acabamento limpo e boa durabilidade, sem pesar na unha. Ideal para quem quer as mãos sempre arrumadas, com aspecto natural.',
@@ -66,8 +66,8 @@
       'zoom.prev': 'Imagem anterior', 'zoom.next': 'Próxima imagem',
       'zoom.hint': 'Toque ou clique para ampliar · arraste para mover',
       'faq.eyebrow': 'Perguntas frequentes', 'faq.title': 'Antes de agendar.',
-      'faq.q1': 'O que é o alongamento em gel com molde F1?',
-      'faq.a1': 'É uma técnica em que o gel é modelado sobre um molde reutilizável (F1) apoiado na unha natural. Permite controlar comprimento, curvatura e espessura, com resultado fino e aparência natural.',
+      'faq.q1': 'O que é o molde F1 e qual a diferença para uma unha postiça?',
+      'faq.a1': 'É um molde reutilizável apoiado na unha natural para dar forma ao gel. Assim dá para controlar comprimento, curvatura e espessura: a unha fica fina e leve, diferente da unha postiça, que é colada já pronta.',
       'faq.q2': 'Quanto tempo dura a esmaltação em gel?',
       'faq.a2': 'Em geral, de duas a três semanas, conforme o crescimento da unha e os cuidados do dia a dia.',
       'faq.q3': 'Como faço para agendar?',
@@ -79,7 +79,7 @@
       'faq.q6': 'Vocês atendem em português?',
       'faq.a6': 'Sim. Atendemos em português e espanhol.',
       'meta.title': 'Lumar · Salão de unhas e sobrancelhas em Asunción | Técnica brasileira',
-      'wa.msg': 'Olá, Marcela! Vim pelo site da Lumar e quero agendar com os 15% de desconto para novos clientes.'
+      'wa.msg': 'Olá, Marcela. Vim pelo site da Lumar e quero agendar com os 15% de desconto para novos clientes.'
     }
   };
 
@@ -262,7 +262,8 @@
     const parallax = () => {
       parallaxQueued = false;
       const top = heroStage.getBoundingClientRect().top;
-      if (top > -heroStage.offsetHeight) heroImg.style.transform = `translate3d(0, ${Math.max(0, -top) * 0.35}px, 0)`;
+      // La imagen sobra 60px por encima del marco; el desplazamiento no pasa de eso.
+      if (top > -heroStage.offsetHeight) heroImg.style.transform = `translate3d(0, ${Math.min(60, Math.max(0, -top) * 0.35)}px, 0)`;
     };
     window.addEventListener('scroll', () => {
       if (!parallaxQueued) { parallaxQueued = true; requestAnimationFrame(parallax); }
@@ -284,7 +285,7 @@
   let ty = 0;
   let gesture = null;
 
-  const photoName = () => photos[current].getAttribute('href').split('/').pop();
+  const photoName = () => photos[current].getAttribute('href').split('/').pop().split('?')[0];
 
   function render() {
     viewerImg.style.transform = `translate3d(${tx}px, ${ty}px, 0) scale(${scale})`;
