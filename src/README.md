@@ -35,7 +35,7 @@ Testes: `?debug=1` mostra os eventos no console; `#privacidad` força o aviso; `
 - `assets/img/hero-m.webp` (1000×1500): foto de abertura em todas as telas, dentro do arco do hero, com parallax leve (desligado para quem prefere menos movimento).- Cada foto de serviço e da galeria existe em duas versões com o mesmo nome: `assets/img/NOME.webp` (exibida) e `assets/img/full/NOME.webp` (aberta no visualizador). Nomes: `f1`, `gel`, `sobrancelhas`, `g1`–`g6`, todas em 4:5.
 - `assets/img/og.jpg` (1200×630): imagem que aparece ao compartilhar o link no WhatsApp, Instagram e Facebook.
 - Visualizador: clique ou toque na foto para ampliar no ponto escolhido, arraste para mover, roda do mouse ou pinça para ajustar, deslize ou setas para trocar de foto, Esc ou toque fora para fechar.
-- O único espaço tracejado que sobra é o retrato da Marcela (`data-placeholder="retrato"`).
+- `assets/img/marcela.jpg` (738×922, 4:5): retrato da Marcela na seção "Quién te atiende". Original sem recorte em `images/marcela-retrato.jpg`.
 
 ## SEO e assistentes de IA
 - `index.html`: título e descrição para busca, Open Graph, dados estruturados (`BeautySalon`/`NailSalon`, serviços, idiomas, Instagram e `FAQPage` com as perguntas frequentes visíveis na página).
