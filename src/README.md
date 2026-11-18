@@ -18,7 +18,7 @@ Com os três vazios nada carrega e o aviso de privacidade não aparece. Com algu
 
 | Evento | Quando | Parâmetros |
 |---|---|---|
-| `whatsapp_click` | clique em botão/link de WhatsApp | `location`: header, hero, manicure-f1, manicure-gel, sobrancelhas, offer, sticky |
+| `whatsapp_click` | clique em botão/link de WhatsApp | `location`: header, hero, manicure-f1, manicure-gel, manicure-banho, pedicure, sobrancelhas, offer, sticky |
 | `instagram_click` | clique em link do Instagram | `location`: hero, gallery, sobre, offer, footer |
 | `section_view` | seção 40% visível | `section` |
 | `scroll_depth` | 25/50/75/100% | `percent` |
