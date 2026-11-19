@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+# Fotos originais
+images/
+
 # Firebase CLI (cache local de deploy e logs)
 .firebase/
 firebase-debug.log*
