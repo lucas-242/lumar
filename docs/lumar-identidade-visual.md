@@ -180,7 +180,7 @@ Todos os arquivos têm o fundo da própria versão (creme `#FAF7F2` ou verde `#2
 - Fotografia em luz natural e quente, tons suaves, pele e mãos reais. Evite cenas de catálogo de spa (pedras empilhadas, bambu, orquídea) e filtros fortes.
 - Evite filtros "vintage" com pretos lavados e dominante verde: deixam as unhas sem vida. Preset único para todas as fotos: temperatura +3 a +6, matiz +6 a +10 para o magenta, pretos −15 a −25, contraste +10, vibração +15, saturação de verde/aqua −20 e luminância de laranja +5 (pele).
 - Prefira fundos brancos, linho ou blush. Fundos verde-escuros ou pretos competem com as unhas.
-- O verde das fotos antigas vinha de um filtro aplicado depois (sombras esverdeadas e pretos lavados); os originais da câmera não têm esse tom. As fotos do site são geradas a partir dos originais em `images/` (fora da pasta publicada), com o mesmo recorte do layout e só uma curva suave que clareia os tons médios, sem mexer em preto e branco puros. Nunca aplique filtros de app ("filme", "vintage", "matte") antes de publicar.
+- O verde das fotos antigas vinha de um filtro aplicado depois (sombras esverdeadas e pretos lavados); os originais da câmera não têm esse tom. As fotos do site são geradas a partir dos originais em `images/` (fora da pasta publicada e fora do repositório, por causa do GPS no EXIF), com o mesmo recorte do layout e só uma curva suave que clareia os tons médios, sem mexer em preto e branco puros. Nunca aplique filtros de app ("filme", "vintage", "matte") antes de publicar.
 - Formatos na landing: miniaturas em WebP de 1000 × 1250 (hero 1000 × 1500), versões ampliadas até 1400px de largura, qualidade 74–76.
 - Sem ícones decorativos nem emoji. Quando faltar um símbolo, use um filete dourado ou a flor.
 

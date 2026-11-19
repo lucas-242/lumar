@@ -32,10 +32,13 @@ Exemplo de link para anúncio: `?utm_source=instagram&utm_medium=bio&utm_campaig
 Testes: `?debug=1` mostra os eventos no console; `#privacidad` força o aviso; `?lang=pt` abre em português.
 
 ## Imagens
-- `assets/img/hero-m.webp` (1000×1500): foto de abertura em todas as telas, dentro do arco do hero, com parallax leve (desligado para quem prefere menos movimento).- Cada foto de serviço e da galeria existe em duas versões com o mesmo nome: `assets/img/NOME.webp` (exibida) e `assets/img/full/NOME.webp` (aberta no visualizador). Nomes: `f1`, `gel`, `sobrancelhas`, `g1`–`g6`, todas em 4:5.
+- `assets/img/hero-m.webp` (1000×1500): foto de abertura no desktop, dentro do arco do hero, com parallax leve (desligado para quem prefere menos movimento). No celular entra `assets/img/hero-sq.webp` (1000×1000), recortada conforme a altura da tela para o botão caber na primeira dobra.
+- Cada foto de serviço e da galeria existe em duas versões com o mesmo nome: `assets/img/NOME.webp` (exibida) e `assets/img/full/NOME.webp` (aberta no visualizador). Nomes: `f1`, `gel`, `sobrancelhas`, `g1`–`g6`, todas em 4:5.
 - `assets/img/og.jpg` (1200×630): imagem que aparece ao compartilhar o link no WhatsApp, Instagram e Facebook.
 - Visualizador: clique ou toque na foto para ampliar no ponto escolhido, arraste para mover, roda do mouse ou pinça para ajustar, deslize ou setas para trocar de foto, Esc ou toque fora para fechar.
-- `assets/img/marcela.jpg` (738×922, 4:5): retrato da Marcela na seção "Quién te atiende". Original sem recorte em `images/marcela-retrato.jpg`.
+- `assets/img/marcela.jpg` (738×922, 4:5): retrato da Marcela na seção "Quién te atiende".
+- Fotos originais: ficam na pasta `images/` da raiz, só na máquina de quem edita o site. Ela está no `.gitignore` e não vai para o repositório nem para o deploy, porque as fotos do celular trazem no EXIF a localização (GPS), a data e o aparelho. Peça os originais à Marcela ou a quem mantém o site.
+- Ao exportar uma foto nova para `assets/img/`, salve sem metadados e confira antes de publicar (no macOS: `mdls arquivo.jpg | grep -i latitude` não deve retornar nada).
 
 ## SEO e assistentes de IA
 - `index.html`: título e descrição para busca, Open Graph, dados estruturados (`BeautySalon`/`NailSalon`, serviços, idiomas, Instagram e `FAQPage` com as perguntas frequentes visíveis na página).
