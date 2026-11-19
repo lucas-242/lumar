@@ -2,8 +2,8 @@
   'use strict';
 
   const CONFIG = {
-    whatsapp: '5950982192737',
-    whatsappDisplay: '+595 0982 192 737',
+    whatsapp: '595982192737',
+    whatsappDisplay: '+595 982 192 737',
     analytics: {
       ga4: 'G-WNVB79SY03', // Google Analytics 4 (measurementId del proyecto Firebase lumar-py)
       clarity: '',   // ID del proyecto en Microsoft Clarity

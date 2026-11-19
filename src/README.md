@@ -43,9 +43,11 @@ Testes: `?debug=1` mostra os eventos no console; `#privacidad` força o aviso; `
 - `sitemap.xml`: página e fotos.
 - `llms.txt`: resumo em texto simples (espanhol e português) para assistentes de IA.
 
-Antes do primeiro deploy, troque `https://SEU-DOMINIO` pelo endereço real em todos esses arquivos:
+Domínio oficial: `https://lumar.com.py`, já usado no canonical, Open Graph, dados estruturados, `sitemap.xml`, `robots.txt` e `llms.txt`. Se o domínio mudar, troque em todos esses arquivos de uma vez:
 
-    grep -rl "SEU-DOMINIO" index.html robots.txt sitemap.xml llms.txt | xargs sed -i '' 's#https://SEU-DOMINIO#https://lumar-py.web.app#g'
+    grep -rl "https://lumar.com.py" index.html robots.txt sitemap.xml llms.txt | xargs sed -i '' 's#https://lumar.com.py#https://NOVO-DOMINIO#g'
+
+Ícones: `favicon.ico` (16, 32 e 48 px, pedido direto pelos navegadores e pelo Google em `/favicon.ico`), `favicon-32.png`, `icon-512.png` (logo nos dados estruturados) e `apple-touch-icon.png` (180 px, tela inicial do iPhone). Todos saem do mesmo emblema; ao trocar o logo, gere os quatro de novo.
 
 Depois do deploy: cadastre o site no Google Search Console e no Bing Webmaster Tools (o Bing alimenta o ChatGPT) e envie o `sitemap.xml`. O que mais pesa para buscas locais ("manicura en Asunción") é um Perfil de Empresa no Google com o mesmo nome, telefone e link do site.
 

@@ -18,4 +18,4 @@ User-agent: Meta-ExternalAgent
 User-agent: DuckAssistBot
 Allow: /
 
-Sitemap: https://SEU-DOMINIO/sitemap.xml
+Sitemap: https://lumar.com.py/sitemap.xml

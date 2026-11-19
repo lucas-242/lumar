@@ -245,4 +245,4 @@ Formato 4:5 (1080 × 1350px). Uma frase curta em Fraunces leve (até 10 palavras
 
 - Marcela Labrea · WhatsApp +595 982 192 737
 - Instagram: @marcela.labrea.py (https://www.instagram.com/marcela.labrea.py/)
-- Na landing, o link do WhatsApp é `https://wa.me/5950982192737`.
+- Na landing, o link do WhatsApp é `https://wa.me/595982192737`.
