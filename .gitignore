@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Firebase CLI (cache local de deploy e logs)
+.firebase/
+firebase-debug.log*
+firebase-debug.*.log*
+
+# Editores
+.vscode/
+.idea/
+
+# Node (caso alguma ferramenta seja adicionada)
+node_modules/
