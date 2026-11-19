@@ -64,6 +64,7 @@
       'sticky.text': '15% para novos clientes', 'sticky.cta': 'WhatsApp',
       'cs.title': 'Privacidade',
       'cs.text': 'Usamos ferramentas de análise e mapas de calor para entender como o site é usado, em dados agregados de cliques e rolagem. Você pode recusar.',
+      'cs.short': 'Usamos análise e mapas de calor para melhorar o site.',
       'cs.yes': 'Aceitar', 'cs.no': 'Recusar',
       'zoom.dialog': 'Galeria de imagens', 'zoom.close': 'Fechar',
       'zoom.prev': 'Imagem anterior', 'zoom.next': 'Próxima imagem',
@@ -195,8 +196,13 @@
   }
 
   const consentBox = byId('consent');
-  const showConsent = () => { consentBox.hidden = false; document.body.classList.add('has-consent'); };
-  const hideConsent = () => { consentBox.hidden = true; document.body.classList.remove('has-consent'); };
+  // Expõe a altura do banner para o hero mobile reservar espaço e manter o CTA visível
+  const syncConsentHeight = () => {
+    document.documentElement.style.setProperty('--consent-h', consentBox.hidden ? '0px' : `${consentBox.offsetHeight}px`);
+  };
+  if ('ResizeObserver' in window) new ResizeObserver(syncConsentHeight).observe(consentBox);
+  const showConsent = () => { consentBox.hidden = false; document.body.classList.add('has-consent'); syncConsentHeight(); };
+  const hideConsent = () => { consentBox.hidden = true; document.body.classList.remove('has-consent'); syncConsentHeight(); };
 
   function setConsent(value) {
     consent = value;
