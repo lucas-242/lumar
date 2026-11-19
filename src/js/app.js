@@ -121,7 +121,7 @@
   let analyticsLoaded = false;
 
   const t = (key) => dict[lang][key] || dict.es[key] || '';
-  const waHref = () => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(`${t('wa.msg')} [${utm.utm_source || 'site'}]`)}`;
+  const waHref = () => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(t('wa.msg'))}`;
 
   function track(name, params = {}) {
     const payload = { ...params, lang, ...utm };

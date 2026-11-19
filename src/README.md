@@ -26,7 +26,7 @@ Com os três vazios nada carrega e o aviso de privacidade não aparece. Com algu
 | `image_open` | abre uma foto ampliada | `image` |
 | `image_zoom` | aproxima a foto (clique, roda do mouse ou pinça) | `image` |
 
-Todos levam `lang` e as UTMs da URL. A mensagem do WhatsApp inclui a origem (ex.: `[instagram]`).
+Todos levam `lang` e as UTMs da URL. A mensagem do WhatsApp sai limpa, só o texto `wa.msg` no idioma da página (espanhol ou português); a origem do clique fica nos eventos de analytics.
 Exemplo de link para anúncio: `?utm_source=instagram&utm_medium=bio&utm_campaign=15off`.
 
 Testes: `?debug=1` mostra os eventos no console; `#privacidad` força o aviso; `?lang=pt` abre em português.
